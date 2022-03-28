@@ -5,6 +5,11 @@ class Person:
     #indicated by a single underscore, your IDE will warn you if you try to access it
     _species = "Homo Sapiens"
 
+    #Indicating a private variable is done with two underscores, python will hide it and make it
+    #more difficult to acces this variable, however contrary to other programming lanuages it still
+    #can be access with workarounds
+    __dont_touch_this = "this is is a secret"
+
     #defining a construtor with two mandatory parameters
     def __init__(self, first_name, last_name):
         self.first_name = first_name
@@ -21,6 +26,9 @@ class Person:
     def print_last_name(self):
         print(self.last_name)
 
+    def print_private_stuff(self):
+        print("This is the something private from: {0}, you shouldn't be here! {1}".format(self.first_name,self.__dont_touch_this))
+
 #child class inheriting from Person class
 class Student(Person):
 
@@ -36,7 +44,7 @@ class Student(Person):
         print("Last Name: {0}, ID: {1}".format(self.last_name, self.student_id))
 
 
-#example of an informal inteface
+#example of an informal interface
 class InformalInterFaceName:
 
     def some_function(self):
@@ -56,8 +64,14 @@ student02.print_last_name()
 #accesing a attribute/variable directly from an object and assigning it to a variable
 id02 = student02.student_id
 
+#optimal way to acces private variable:
+student02.print_private_stuff()
 
+#accsesing a private variable directly will fail:
+#student02.__dont_touch_this
 
+#but you can access it with a workaround by calling its class name like this:
+print(student02._Person__dont_touch_this)
 
 
 
