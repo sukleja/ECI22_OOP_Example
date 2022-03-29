@@ -7,10 +7,10 @@ class Person:
 
     #Indicating a private variable is done with two underscores, python will hide it and make it
     #more difficult to acces this variable, however contrary to other programming lanuages it still
-    #can be access with workarounds
+    #can be accessed with workarounds
     __dont_touch_this = "this is is a secret"
 
-    #defining a construtor with two mandatory parameters
+    #defining a constructor with two mandatory parameters
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
@@ -66,6 +66,9 @@ id02 = student02.student_id
 
 #optimal way to acces private variable:
 student02.print_private_stuff()
+
+#accsesing a protected variable directly is possible, but you will get a warning:
+prot = student02._species
 
 #accsesing a private variable directly will fail:
 #student02.__dont_touch_this
