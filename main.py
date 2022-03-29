@@ -58,16 +58,16 @@ class InformalInterFaceName:
 student01 = Student("Alan", "Turing", 126540)
 student02 = Student("Ada", "Lovelace", 101215)
 
-#accesing a method/function from an object
+#accessing a method/function from an object
 student02.print_last_name()
 
-#accesing a attribute/variable directly from an object and assigning it to a variable
+#accessing a attribute/variable directly from an object and assigning it to a variable
 id02 = student02.student_id
 
 #optimal way to acces private variable:
 student02.print_private_stuff()
 
-#accsesing a protected variable directly is possible, but you will get a warning:
+#accsessing a protected variable directly is possible, but you will get a warning:
 prot = student02._species
 
 #accsesing a private variable directly will fail:
